@@ -1,45 +1,35 @@
 import React from 'react';
 import './App.css';
-import Header from './Header'
-import Button from './Button'
-
+import {Header, Catigoris, Button} from './components'
 
 
 function App() {
+
+
+    const clickPoKnopke = ()=>{
+        alert('hello')
+    } 
+
     return (
         <>
             <div className="wrapper">
                 <Header />
         
 
-                <Button
-                    color="black"
-                    outline
-                    
-                >
-                    123
-                </Button>
-                
-                <Button
-                    color="black"
-                    
-                    
-                >
-                    hello js
-                </Button>
                 <div className="content">
                     <div className="container">
                         <div className="content__top">
-                            <div className="categories">
-                                <ul>
-                                    <li className="active">Все</li>
-                                    <li>Мясные</li>
-                                    <li>Вегетарианская</li>
-                                    <li>Гриль</li>
-                                    <li>Острые</li>
-                                    <li>Закрытые</li>
-                                </ul>
-                            </div>
+                           <Catigoris 
+                           
+                           onClickItem={(item)=> console.log(item)}
+                           items={[
+                            'Мясные',
+                            'Вегенетарианские',
+                            'Гриль',
+                            'Острые',
+                            'Закрытые',
+                        ]}
+                            />
                             <div className="sort">
                                 <div className="sort__label">
                                     <svg
